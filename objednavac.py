@@ -17,6 +17,7 @@ with open("vyzranozapi.txt", "r") as file:
 #initialize session for interacting with www
 session = requests.Session()
 cardsList = []
+basicLands = {"Island":"nope", "Mountain":"nejsou", "Swamp":"dostupne", "Plains":"coz", "Forest":"nastve"}
 
 #get user's basket UID until in-app logging into cernyrytir i implemented
 basketUID = input("Basket UID?: ")
@@ -55,7 +56,7 @@ for card in cardsList:
         continue
     
     # if there's multiple versions of the card available, we check each variant for availability
-    if len(databaze[card[0]].keys()) > 1:
+    if len(databaze[card[0]].keys()) > 1 and not (name in basicLands.keys()):
         print("There's", len(databaze[card[0]].keys()), "variants of", card[0], "and you want", card[1], "copies.\nAvailable ones:")
         asdf, total = 0, 0
         #for each variant check for availability and price
@@ -65,7 +66,7 @@ for card in cardsList:
             available = temp.get("internalCards")[0]["availEshopQty"]
             edition = temp.get("cardEditionName")
             price = temp.get("internalCards")[0]["priceSell"]
-            imageURL = "https://images.cernyrytir.eu/image/cernyrytir/v2?uid=" +temp.get("internalCards")[0]["imageUuid"] + "&faceType=FRONT&imageType=MTG&sizeType=BIG"
+            #imageURL = "https://images.cernyrytir.eu/image/cernyrytir/v2?uid=" +temp.get("internalCards")[0]["imageUuid"] + "&faceType=FRONT&imageType=MTG&sizeType=BIG"
             #if available, we list it
             if available:
                 total += available
@@ -82,6 +83,11 @@ for card in cardsList:
         else:
             print("    ...None LOL")
             
+    #if it's a basic land, order enough sets
+    elif card[0] in basicLands.keys():
+        ####add basic land set ordering once they're available again####
+        print("Basic land sets unavailable at the moment.")
+        
     #if there's only one printing, we only check for that one
     else:
         for key in databaze[card[0]].keys():
