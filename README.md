@@ -1,5 +1,5 @@
 # Automatický objednávač karet Magic: the Gathering z Černého Rytíře  
-# Tento projek má za cíl vzít od uživatele decklist nebo odkaz na Moxfield a nahrát mu do košíku na Rytíři všechny karty z balíčku.  
+Tento projek má za cíl vzít od uživatele decklist nebo odkaz na Moxfield a nahrát mu do košíku na Rytíři všechny karty z balíčku.  
 ## Aktuální stav:
   Všechno čistě konzolové!  
   ### scraper (crapiabuser.py)
