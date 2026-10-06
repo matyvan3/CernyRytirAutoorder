@@ -35,8 +35,11 @@ with open(filename, "a+", encoding = "utf8") as file:
         #if the card exists, note down its number and name
         json = resp.json()
         name = json.get("name")
-        #save it into the I/O stream
+        sfID = json.get("scryfallId")
+        crID = json.get("internalCards")[0]["productUid"]
+        print(cardnum, name, sfID, crID)
+        #save into I/O stream
         if len(name):
-            file.write(str(cardnum) + ";" + str(name) + "\n")
+            file.write(str(cardnum) + ";" + str(name) + ";" + str(sfID) + ";" + str(crID) + "\n")
             file.flush()
     

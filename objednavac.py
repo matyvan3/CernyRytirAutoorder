@@ -9,6 +9,7 @@ with open("vyzranozapi.txt", "r") as file:
         line = asdf.split(";")
         name = line[1].split(" (")[0]
         num = line[0]
+        nakup = line[3][:-1]
         if not name in databaze:
             databaze[name] = {}
         databaze[name][num] = nakup
@@ -64,6 +65,7 @@ for card in cardsList:
             available = temp.get("internalCards")[0]["availEshopQty"]
             edition = temp.get("cardEditionName")
             price = temp.get("internalCards")[0]["priceSell"]
+            imageURL = "https://images.cernyrytir.eu/image/cernyrytir/v2?uid=" +temp.get("internalCards")[0]["imageUuid"] + "&faceType=FRONT&imageType=MTG&sizeType=BIG"
             #if available, we list it
             if available:
                 total += available
@@ -71,8 +73,11 @@ for card in cardsList:
                 asdf += 1
             wait(0.2)
         #if any printings of the card are available, we let the user know
-        if total > 0:
+        if total > 0 and asdf > 1:
             print("    In total that makes", total, "available")
+        elif total > 0:
+            ####auto-order the only one (remember which one)####
+            print("    Ordering", card[1] if (total >= card[1]) else total)
         #or laugh in their face if there are none
         else:
             print("    ...None LOL")
