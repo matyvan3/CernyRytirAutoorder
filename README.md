@@ -1,12 +1,12 @@
-#Automatický objednávač karet Magic: the Gathering z Černého Rytíře  
-#Tento projek má za cíl vzít od uživatele decklist nebo odkaz na Moxfield a nahrát mu do košíku na Rytíři všechny karty z balíčku.  
-##Aktuální stav:
-&emspVšechno čistě konzolové!  
-&emsp###scraper (crapiabuser.py)
-&emsp&emsp-  kontroluje všechna čísla od posledního záznamu (aktuálně 228068) do 999999  
-&emsp-  nehlídá, co se děje mezi už známými záznamy  
-&emsp-  bere jenom REGULAR verze karet (tj. non-foil)  
-&emsp-  ukládá název a číslo karty (v odkazu na stránkách rytíře)  
+# Automatický objednávač karet Magic: the Gathering z Černého Rytíře  
+# Tento projek má za cíl vzít od uživatele decklist nebo odkaz na Moxfield a nahrát mu do košíku na Rytíři všechny karty z balíčku.  
+## Aktuální stav:
+&emsp Všechno čistě konzolové!  
+&emsp ### scraper (crapiabuser.py)
+&emsp&emsp -  kontroluje všechna čísla od posledního záznamu (aktuálně 228068) do 999999  
+&emsp -  nehlídá, co se děje mezi už známými záznamy  
+&emsp -  bere jenom REGULAR verze karet (tj. non-foil)  
+&emsp -  ukládá název a číslo karty (v odkazu na stránkách rytíře)  
   
 &emsp###objednávač (objednavac.py)  
 &emsp-  vyžaduje ID košíku, které je nutné manuálně vytáhnout z prohlížeče  
