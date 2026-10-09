@@ -10,15 +10,13 @@ Tento projek má za cíl vzít od uživatele decklist nebo odkaz na Moxfield a n
   
   ### objednávač (objednavac.py)  
    -  vyžaduje ID košíku, které je nutné manuálně vytáhnout z prohlížeče  
-   -  pro Moxfield vyžaduje ID decku, zatím nepodporuje přímo odkaz  
-   -  podporuje pouze jednociferné počty karet, které musí být specifikované  
+   -  pro Moxfield vyžaduje ID decku, zatím nepodporuje přímo odkaz    
    -  kontroluje známost karet (překlepy jsou problém)  
-   -  vrací dostupné varianty karet - NEOBJEDNÁVÁ  
+   -  vrací dostupné varianty karet
+   -  v případě volby autoobjednání nejlevnějších a u karet, kde je omezený výběr, i objednává
     
 ## V plánu je:  
   -  přihlašování do uživatelského účtu na Rytíři  
-  -  výpočet celkové ceny balíčku  
-  -  automatický výběr karet podle nelevnější varianty  
   -  podpora a zdůraznění různých variant karet (běžné/foil, extended/fullart atd.)  
   -  GUI  
   -  kontrola nových karet  
